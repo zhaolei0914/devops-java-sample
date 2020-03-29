@@ -24,6 +24,7 @@ pipeline {
         stage ('checkout scm') {
             steps {
             println "校验 chart 模板"
+            echo "校验 helm chart 模板"
             sh "helm lint "
             checkout(scm)
             }
