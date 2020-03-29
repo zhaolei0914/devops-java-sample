@@ -30,6 +30,8 @@ pipeline {
         stage ('unit test') {
             steps {
                 container ('maven') {
+                     echo "校验 helm 版本"
+                    sh "helm version"
                     sh 'mvn clean test'
                 }
             }
